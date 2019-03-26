@@ -1,0 +1,9 @@
+:local(.Navbar) {
+    background: #2e7c31;
+    font-size: 26px;
+    color: #ffffff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
