@@ -1,0 +1,11 @@
+:local(.Shelf) {
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    margin-top: 20px
+}
+
+:local(.Shelf__title) {
+    border-bottom: 1px solid #dedede;
+    font-size: 20px;
+}
