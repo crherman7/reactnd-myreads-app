@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Shelf extends Component {
+class BookShelf extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class Shelf extends Component {
     }
 }
 
-export default Shelf;
+export default BookShelf;
