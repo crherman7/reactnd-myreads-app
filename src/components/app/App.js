@@ -3,7 +3,6 @@ import "./App.css";
 import Navbar from "../navbar/Navbar";
 import * as BooksAPI from "../../utils/BooksAPI";
 import ListShelves from "../listshelves/ListShelves";
-import Shelf from '../shelf/Shelf';
 
 class App extends Component {
   state = {
