@@ -4,8 +4,8 @@ import styles from "./Book.css";
 class Book extends Component {
   state = {};
 
-  onShelfChangerClick = (e, shelf) => {
-    shelf && console.log(e.target.value);
+  onShelfChangerClick = (e, book, shelf) => {
+    shelf && this.props.onChange(book, e.target.value);
   };
 
   render() {
@@ -29,7 +29,7 @@ class Book extends Component {
             onClick={this.onShelfChangerClick}
             className={styles.Book__shelfchanger}
           >
-            <select value={book.shelf} onChange={(e) => this.onShelfChangerClick(e, book.shelf)}>
+            <select value={book.shelf} onChange={(e) => this.onShelfChangerClick(e, book, book.shelf)}>
               <option value="move" disabled>
                 Move to...
               </option>

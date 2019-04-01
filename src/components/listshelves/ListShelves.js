@@ -5,7 +5,7 @@ class ListShelves extends Component {
   componentDidMount() {}
 
   render() {
-    const { books } = this.props;
+    const { books, onChange } = this.props;
 
     const currentlyReading = books.filter(book => book.shelf === "currentlyReading");
     const read = books.filter(book => book.shelf === "read");
@@ -13,9 +13,9 @@ class ListShelves extends Component {
 
     return (
       <div>
-        <Shelf title="Currently Reading" books={currentlyReading} />
-        <Shelf title="Read" books={read} />
-        <Shelf title="Want To Read" books={wantToRead} />
+        <Shelf title="Currently Reading" books={currentlyReading} onChange={onChange}/>
+        <Shelf title="Read" books={read} onChange={onChange}/>
+        <Shelf title="Want To Read" books={wantToRead} onChange={onChange}/>
       </div>
     );
   }
