@@ -3,7 +3,6 @@ import "./App.css";
 import Navbar from "../navbar/Navbar";
 import * as BooksAPI from "../../utils/BooksAPI";
 import ListShelves from "../listshelves/ListShelves";
-import Shelf from '../shelf/Shelf';
 
 class App extends Component {
   state = {
@@ -16,25 +15,21 @@ class App extends Component {
     });
   }
 
-  onAddBook = (book, shelf) => {
-    this.setState(state => ({
-      [shelf]: state[shelf].concat([book])
+  onUpdateBook = (book, shelf) => {
+    this.setState(prevState => ({
+      books: prevState.books.map(b => (
+        b.id === book.id ? {...b, shelf}: b
+      ))
     }));
 
     BooksAPI.update(book, shelf);
-  };
-
-  onRemoveBook = (book, shelf) => {
-    this.setState(state => ({
-      [shelf]: state[shelf].filter(b => b.id !== book.id)
-    }));
   };
 
   render() {
     return (
       <div className="app">
         <Navbar />
-        <ListShelves books={this.state.books} />
+        <ListShelves books={this.state.books} onChange={this.onUpdateBook} />
       </div>
     );
   }
