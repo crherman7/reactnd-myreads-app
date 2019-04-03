@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./Shelf.css";
+import styles from "./Shelf.module.css";
 import Book from "../book/Book";
 
 class Shelf extends Component {

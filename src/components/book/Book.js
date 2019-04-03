@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./Book.css";
+import styles from "./Book.module.css";
 
 class Book extends Component {
   state = {};
