@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "../navbar/Navbar";
 import * as BooksAPI from "../../utils/BooksAPI";
 import ListShelves from "../listshelves/ListShelves";
+import QueryBooks from "../querybooks/QueryBooks";
 
 class App extends Component {
   state = {
@@ -28,8 +29,9 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Navbar />
-        <ListShelves books={this.state.books} onChange={this.onUpdateBook} />
+        {/* <Navbar />
+        <ListShelves books={this.state.books} onChange={this.onUpdateBook} /> */}
+        <QueryBooks onChange={this.onUpdateBook}/>
       </div>
     );
   }

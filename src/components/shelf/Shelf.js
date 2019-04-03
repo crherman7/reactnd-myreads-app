@@ -9,7 +9,7 @@ class Shelf extends Component {
     return (
       <div>
         <div className={styles.Shelf}>
-          <div className={styles.Shelf__title}>{title}</div>
+          {title && <div className={styles.Shelf__title}>{title}</div>}
           <ol className={styles.Shelf__grid}>
             {books.map(book => (
               <li key={book.id} className={styles.Shelf__griditem}>
