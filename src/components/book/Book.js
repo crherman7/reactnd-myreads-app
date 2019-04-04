@@ -3,7 +3,7 @@ import styles from "./Book.module.css";
 
 class Book extends Component {
   onShelfChangerClick = (shelf, book, prevShelf) => {
-    prevShelf && this.props.onChange(book, shelf, prevShelf);
+    this.props.onChange(book, shelf, prevShelf);
   };
 
   render() {
@@ -34,10 +34,7 @@ class Book extends Component {
                 {author}
               </div>
             ))}
-          <div
-            onClick={this.onShelfChangerClick}
-            className={styles.Book__shelfchanger}
-          >
+          <div className={styles.Book__shelfchanger}>
             <select
               defaultValue={shelf}
               onChange={e =>
