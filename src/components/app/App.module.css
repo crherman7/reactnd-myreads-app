@@ -1,0 +1,14 @@
+.App_icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: green;
+    background-image: url('../../icons/add.svg');
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    box-shadow: 0 1px 8px black;
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+}

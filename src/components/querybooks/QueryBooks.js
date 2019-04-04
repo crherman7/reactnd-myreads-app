@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./QueryBooks.module.css";
 import * as BooksAPI from "../../utils/BooksAPI";
 import Shelf from "../shelf/Shelf";
+import { Link } from "react-router-dom";
 
 class QueryBooks extends Component {
   state = {
@@ -96,19 +97,24 @@ class QueryBooks extends Component {
 
   render() {
     const { books } = this.state;
-    const { onChange } = this.props;
+    const { onChange, shelfBooks } = this.props;
 
     return (
       <div>
         <div className={styles.QueryBar}>
-          <div className={styles.QueryBar__icon} />
+          <Link to='/' className={styles.QueryBar__icon} />
           <input
             onChange={e => this.onTextChange(e.target.value)}
             type="text"
             placeholder="Search by title or author"
           />
         </div>
-        <Shelf onChange={onChange} title="" books={books} />
+        <Shelf
+          onChange={onChange}
+          title=""
+          books={books}
+          shelfBooks={shelfBooks}
+        />
       </div>
     );
   }

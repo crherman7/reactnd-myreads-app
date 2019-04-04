@@ -2,13 +2,22 @@ import React, { Component } from "react";
 import styles from "./Book.module.css";
 
 class Book extends Component {
-  onShelfChangerClick = (e, book, shelf) => {
-    shelf && this.props.onChange(book, e.target.value);
+  onShelfChangerClick = (shelf, book, prevShelf) => {
+    prevShelf && this.props.onChange(book, shelf, prevShelf);
   };
 
   render() {
-    const { book } = this.props;
-    const shelf = book.shelf ? book.shelf: 'none'
+    const { book, shelfBooks } = this.props;
+
+    const shelfList = shelfBooks
+      .filter(shelfBook => shelfBook.id === book.id)
+      .map(shelfBook => shelfBook.shelf);
+
+    const shelf = book.shelf
+      ? book.shelf
+      : shelfList[0]
+      ? shelfList[0]
+      : "none";
 
     return (
       <div>
@@ -30,8 +39,10 @@ class Book extends Component {
             className={styles.Book__shelfchanger}
           >
             <select
-              value={shelf}
-              onChange={e => this.onShelfChangerClick(e, book, shelf)}
+              defaultValue={shelf}
+              onChange={e =>
+                this.onShelfChangerClick(e.target.value, book, shelf)
+              }
             >
               <option value="move" disabled>
                 Move to...

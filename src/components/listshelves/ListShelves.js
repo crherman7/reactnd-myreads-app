@@ -19,6 +19,7 @@ class ListShelves extends Component {
             title={shelf.titleCase}
             books={books.filter(book => book.shelf === shelf.snakeCase)}
             onChange={onChange}
+            shelfBooks={[]}
           />
         ))}
       </div>
