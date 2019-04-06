@@ -1,28 +1,28 @@
-:local(.Book) {
+.Book {
   width: 140px;
   background: #ffffff;
   margin-top: 20px;
   position: relative;
 }
 
-:local(.Book__cover) {
+.Book__cover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   width: 140px;
   height: 180px;
   margin-bottom: 10px;
 }
 
-:local(.Book__title) {
+.Book__title {
   color: #000000;
   font-size: 10px;
 }
 
-:local(.Book__author) {
+.Book__author {
   color: #999999;
   font-size: 10px;
 }
 
-:local(.Book__shelfchanger) {
+.Book__shelfchanger {
   position: absolute;
   right: -10px;
   top: 150px;

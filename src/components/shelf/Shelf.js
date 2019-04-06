@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import styles from "./Shelf.css";
+import styles from "./Shelf.module.css";
 import Book from "../book/Book";
 
 class Shelf extends Component {
   render() {
-    const { title, books, onChange} = this.props;
+    const { title, books, onChange, shelfBooks} = this.props;
 
     return (
       <div>
         <div className={styles.Shelf}>
-          <div className={styles.Shelf__title}>{title}</div>
+          {title && <div className={styles.Shelf__title}>{title}</div>}
           <ol className={styles.Shelf__grid}>
             {books.map(book => (
               <li key={book.id} className={styles.Shelf__griditem}>
-                <Book book={book} onChange={onChange}/>
+                <Book book={book} onChange={onChange} shelfBooks={shelfBooks}/>
               </li>
             ))}
           </ol>

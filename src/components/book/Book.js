@@ -1,35 +1,46 @@
 import React, { Component } from "react";
-import styles from "./Book.css";
+import styles from "./Book.module.css";
 
 class Book extends Component {
-  state = {};
-
-  onShelfChangerClick = (e, book, shelf) => {
-    shelf && this.props.onChange(book, e.target.value);
+  onShelfChangerClick = (shelf, book, prevShelf) => {
+    this.props.onChange(book, shelf, prevShelf);
   };
 
   render() {
-    const { book } = this.props;
+    const { book, shelfBooks } = this.props;
+
+    const shelfList = shelfBooks
+      .filter(shelfBook => shelfBook.id === book.id)
+      .map(shelfBook => shelfBook.shelf);
+
+    const shelf = book.shelf
+      ? book.shelf
+      : shelfList[0]
+      ? shelfList[0]
+      : "none";
 
     return (
       <div>
         <div className={styles.Book}>
           <img
             className={styles.Book__cover}
-            src={book.imageLinks.thumbnail}
+            src={book.imageLinks && book.imageLinks.thumbnail}
             alt=""
           />
           <div className={styles.Book__title}>{book.title}</div>
-          {book.authors.map(author => (
-            <div key={author} className={styles.Book__author}>
-              {author}
-            </div>
-          ))}
-          <div
-            onClick={this.onShelfChangerClick}
-            className={styles.Book__shelfchanger}
-          >
-            <select value={book.shelf} onChange={(e) => this.onShelfChangerClick(e, book, book.shelf)}>
+          {book.authors &&
+            book.authors.map(author => (
+              <div key={author} className={styles.Book__author}>
+                {author}
+              </div>
+            ))}
+          <div className={styles.Book__shelfchanger}>
+            <select
+              defaultValue={shelf}
+              onChange={e =>
+                this.onShelfChangerClick(e.target.value, book, shelf)
+              }
+            >
               <option value="move" disabled>
                 Move to...
               </option>
