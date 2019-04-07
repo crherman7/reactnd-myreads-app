@@ -1,0 +1,29 @@
+html,
+body,
+.root {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+}
+
+body,
+.App {
+  background: white;
+}
+
+.App_icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #60ac5d;
+    background-image: url('../../icons/add.svg');
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    box-shadow: 0 2px 6px grey;
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+}

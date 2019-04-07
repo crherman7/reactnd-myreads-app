@@ -1,0 +1,45 @@
+.Book {
+  width: 140px;
+  background: #ffffff;
+  margin-top: 20px;
+  position: relative;
+}
+
+.Book__cover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 140px;
+  height: 180px;
+  margin-bottom: 10px;
+}
+
+.Book__title {
+  color: #000000;
+  font-size: 10px;
+}
+
+.Book__author {
+  color: #999999;
+  font-size: 10px;
+}
+
+.Book__shelfchanger {
+  position: absolute;
+  right: -10px;
+  top: 150px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #60ac5d;
+  background-image: url("../../icons/arrow-drop-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}

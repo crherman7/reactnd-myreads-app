@@ -1,0 +1,27 @@
+.Shelf {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  position: relative;
+}
+
+.Shelf__title {
+  border-bottom: 1px solid #dedede;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.Shelf__grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Shelf__griditem {
+  padding: 10px 20px;
+  text-align: left;
+}
