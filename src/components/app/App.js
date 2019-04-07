@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import Navbar from "../navbar/Navbar";
 import * as BooksAPI from "../../utils/BooksAPI";
 import ListShelves from "../listshelves/ListShelves";
@@ -34,7 +33,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className={styles.App}>
         <Route
           exact
           path="/"
